@@ -1,0 +1,50 @@
+h1{
+    text-align: center;
+    color: white;
+}
+
+.center-header{
+    text-align: center;
+    width: 100%;
+}
+
+.header{
+    border: 2px solid black;
+    display: inline-block;
+    background-color: dimgrey;
+    width: 300px;
+}
+
+p{
+    text-align: center;
+    color: white;
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+.form{
+    border: 1px solid black;
+    background-color: lightslategrey;
+    padding: 20px;
+    width: 500px;
+    display: inline-block;
+    color: white;
+}
+
+.image{
+    border: 1px solid black;
+    background-color: lightslategrey;
+    padding: 20px;
+    width: 500px;
+    display: inline-block;
+}
+
+form{
+    text-align: center;
+}
+
+body{
+    background-color: darkslategray;
+    text-align: center;
+    font-family: Arial;
+}
