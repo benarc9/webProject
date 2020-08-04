@@ -1,4 +1,5 @@
 var {Sequelize, DataTypes} = require('sequelize');
+const BC = require('bcrypt');
 
 var Database = require('../db');
 
@@ -13,7 +14,16 @@ const User = Database.seql.define('User', {
         type: DataTypes.CHAR
     },
     password: {
-        type: DataTypes.CHAR
+        type: DataTypes.STRING
+    }
+},
+{
+    hooks: {
+        beforeCreate : (user , options) => {
+            {
+                user.password = user.password && user.password != "" ? bcrypt.hashSync(user.password, 10) : "";
+            }            
+        }
     }
 } );
 
