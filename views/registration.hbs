@@ -5,6 +5,7 @@
 <div class="d-flex justify-content-center">
     <div class="text-white border border-info rounded bg-dark w-45 p-4">
         <form action="/register" method='POST'>
+        
             <p><label for="newusername">New Username:
             <input type="username" id="newusername" name="newusername" required placeholder="New Username"/><br/><br/></label></p>
             <p><label for="email">E-Mail:
@@ -18,7 +19,25 @@
             <label for="TOS">
                 I accept the <a href="#">Terms of Service and Privacy agreement</a>.
             <input type="checkbox" id="TOS" name="TOS" required></label><br/><br/>
+
             <input value="Submit" type="submit" class="btn btn-info"/>
+
+            <div id="registerFailureModal" class="modal fade" role="dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        Username is already taken. Please choose another username.
+                    </div>
+                </div>
+            </div>
+
+            <div id="registerSuccessModal" class="modal fade" role="dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        Registration successful!
+                    </div>
+                </div>
+            </div>
+
         </form>
     </div>
 </div>
