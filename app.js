@@ -40,6 +40,8 @@ app.use('/login' , login);
 app.use('/registration', registration);
 app.use('/imagepost', imagepost);
 app.use('/postimage', postimage);
+app.use('/landing', landing);
+app.use('/browse', browse);
 
 app.use(bodyparser.urlencoded({ extended:true }));
 
