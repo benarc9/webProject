@@ -24,6 +24,8 @@ var login = require('./routes/login');
 var registration = require('./routes/registration');
 var imagepost = require('./routes/imagepost');
 var postimage = require('./routes/postimage');
+var landing = require('./routes/landing');
+var browse = require('./routes/browse');
 
 app.use(logger('dev'));
 app.use(express.json());
