@@ -23,6 +23,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var login = require('./routes/login');
 var registration = require('./routes/registration');
+var imagepost = require('./routes/imagepost');
+var postimage = require('./routes/postimage');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -35,6 +37,8 @@ app.use('/users', usersRouter);
 
 app.use('/login' , login);
 app.use('/registration', registration);
+app.use('/imagepost', imagepost);
+app.use('/postimage', postimage);
 
 app.use(bodyparser.urlencoded({ extended:true }));
 
