@@ -11,10 +11,9 @@ var app = express();
 
 app.engine('hbs', exphbs({
     extname: 'hbs',
-    defaultLayout: 'main',
-    layoutsDir: __dirname + '/views/layout'
-})
-    );
+    defaultLayout: 'main.hbs',
+    layoutsDir: __dirname + '/views/layout/'
+}));
 
 app.set('view engine', 'hbs');
 app.set('views' , (__dirname, 'views'));
@@ -24,7 +23,7 @@ var usersRouter = require('./routes/users');
 var login = require('./routes/login');
 var registration = require('./routes/registration');
 var imagepost = require('./routes/imagepost');
-var imagepost = require('./routes/postimage');
+var postimage = require('./routes/postimage');
 
 app.use(logger('dev'));
 app.use(express.json());
