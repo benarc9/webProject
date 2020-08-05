@@ -1,27 +1,21 @@
-<div class="container center-header">
-<div class="jumbotron header">
-<h1>
-    Welcome!
-</h1>
-</div>
-</div>
-
-<div class="container">
+<div class="container text-white">
     <p>
         Please login or register below!
     </p>
 </div>
 
-<div class="form">
-    <form action="/register" method='POST'>
-        <label for="username">Username:
-        <input type="username" id="username" name="username" required placeholder="Username"/><br/><br/></label>
-        <label for="password">Password:
-        <input type="password" id="password" name="password" required placeholder="Password"/><br/><br/></label>
-        <input type="submit" value="Submit"/>
-    </form>
-    <p></p>
-    <form action="register">
-        <button>Register</button>
-    </form>
+<div class="d-flex justify-content-center">
+    <div class="text-white border border-info rounded bg-dark w-50 p-4">
+        <form action="/register" method='POST'>
+            <label for="username">Username:
+            <input type="username" id="username" name="username" required placeholder="Username"/><br/><br/></label>
+            <p><label for="password">Password:
+            <input type="password" id="password" name="password" required placeholder="Password"/><br/></label></p>
+            <input type="submit" value="Submit" class="btn btn-info"/>
+        </form>
+        <p></p>
+        <form action="register">
+            <button class="btn btn-info">Register</button>
+        </form>
+    </div>
 </div>

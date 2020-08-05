@@ -1,36 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<link rel="stylesheet" type="text/css" href="../css/CSS-Styling.css">
-<head>
-    <meta charset="UTF-8">
-    <title>Post an Image</title>
-</head>
+<p class="text-white">
+    Upload your photo below!
+</p>
 
-<body>
-    <div class="header">
-    <h1>
-        Post an image
-    </h1>
+<div class="d-flex justify-content-center">
+    <div class="text-white border border-info rounded bg-dark w-50 p-4">
+        <form>
+            <label for="imageheader">Image Header:
+                <input type="text" id="imageheader" name="imageheader" required placeholder="New Header"/><br/><br/></label>
+            <label for="image">Upload Image Here:
+                <input type="file" id="image" name="image" required placeholder="Upload Image Here"/><br/><br/></label>
+            <label for="imagedescription">Image Description:
+                <input type="text" id="imagedescription" name="imagedescription" required placeholder="Image Description"/><br/><br/></label>
+            <label for="usepolicy">
+                I accept the <a href="#">Acceptable Use Policy</a> for uploading images.
+                <input type="checkbox" id="usepolicy" name="usepolicy" required><br/><br/></label>
+            <p><input class="btn btn-info" type="submit"/></p>
+        </form>
     </div>
-
-    <p>
-        Upload your photo below!
-    </p>
-
-<div class="form">
-<form>
-    <label for="imageheader">Image Header:
-        <input type="text" id="imageheader" name="imageheader" required placeholder="New Header"/><br/><br/></label>
-    <label for="image">Upload Image Here:
-        <input type="file" id="image" name="image" required placeholder="Upload Image Here"/><br/><br/></label>
-    <label for="imagedescription">Image Description:
-        <input type="text" id="imagedescription" name="imagedescription" required placeholder="Image Description"/><br/><br/></label>
-    <label for="usepolicy">
-        I accept the <a href="#">Acceptable Use Policy</a> for uploading images.
-        <input type="checkbox" id="usepolicy" name="usepolicy" required><br/><br/></label>
-    <input type="submit"/>
-</form>
 </div>
-
-</body>
-</html>
