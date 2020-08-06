@@ -20,8 +20,8 @@ const User = Database.seql.define('User', {
 {
     hooks: {
         beforeCreate : (user , options) => {
-            {
-                user.password = user.password && user.password != "" ? bcrypt.hashSync(user.password, 10) : "";
+            {              
+                user.password = user.password && user.password != "" ? BC.hashSync(user.password, 10) : "";
             }
             
         }
