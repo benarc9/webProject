@@ -28,6 +28,12 @@ const User = Database.seql.define('User', {
     }
 } );
 
+// Load hash from the db, which was preivously stored BC.compare(myPlaintextPassword, hash, function(err, res) {
+  // if res == true, password matched
+  // else wrong password
+//});
+//https://medium.com/@manishsundriyal/a-quick-way-for-hashing-passwords-using-bcrypt-with-nodejs-8464f9785b67
+
 (async() => {
     Database.seql.sync().then(
         () => {

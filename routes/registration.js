@@ -7,11 +7,12 @@ router.get('/' , function(req , res, next){
     res.render('registration');
 });
 
-router.post('/register', function(req, res, next){
+router.post('/register', function(req, res){
     var newuser = Database.seql.models.User.build({
         username: req.body.newusername,
         password: req.body.createpassword
     });
+    
     console.log("User: " , req.body.newusername);
     console.log("Pass: " , req.body.createpassword);
     res.render('landing');

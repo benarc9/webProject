@@ -43,7 +43,7 @@ app.use('/postimage', postimage);
 app.use('/landing', landing);
 app.use('/browse', browse);
 
-app.use(bodyparser.urlencoded({ extended:true }));
+app.use(bodyparser.urlencoded({ extended: false }));
 
 app.use(function(err, req, res, next) { 
     res.locals.message = err.message;
