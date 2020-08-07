@@ -4,9 +4,7 @@ var User = require('../models/user');
 var Database = require('../db');
 
 router.get('/' , function(req , res, next){
-    res.render('registration', {
-        title: 'Registration'
-    });
+    res.render('registration');
 });
 
 router.post('/register', function(req, res, next){
