@@ -10,8 +10,15 @@ router.get('/' , function(req , res, next){
 router.post('/register', function(req, res, next){
     var newuser = Database.seql.models.User.build({
         username: req.body.newusername,
-        password: req.body.password
+        password: req.body.createpassword
     });
+    console.log("User: " , req.body.newusername);
+    console.log("Pass: " , req.body.createpassword);
+    res.render('landing');
+});
+
+router.get('/landing', function(req, res){
+    res.render('landing');
 });
 
 module.exports = router;
