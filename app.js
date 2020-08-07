@@ -28,8 +28,7 @@ var landing = require('./routes/landing');
 var browse = require('./routes/browse');
 
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -43,15 +42,7 @@ app.use('/postimage', postimage);
 app.use('/landing', landing);
 app.use('/browse', browse);
 
-app.use(bodyparser.urlencoded({ extended:true }));
-
-app.use(function(err, req, res, next) { 
-    res.locals.message = err.message;
-    res.locals.error = req.app.get('env') === 'development' ? err: {};
-
-    res.status(err.status || 500);
-    res.render('error');
- });
+app.use(bodyparser.urlencoded({ extended:false }));
 
 //#region Database Setup
 
@@ -59,7 +50,7 @@ app.use(function(err, req, res, next) {
     data.authenticate();
     var User = require('./models/user');
     const bodyParser = require('body-parser');
-    
+
     var newuser = Database.seql.models.User.create({
         username: 'sadoifjsoi',
         password: '123',
