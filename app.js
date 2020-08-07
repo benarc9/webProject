@@ -26,6 +26,7 @@ var imagepost = require('./routes/imagepost');
 var postimage = require('./routes/postimage');
 var landing = require('./routes/landing');
 var browse = require('./routes/browse');
+var register = require('./routes/register');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -42,8 +43,7 @@ app.use('/imagepost', imagepost);
 app.use('/postimage', postimage);
 app.use('/landing', landing);
 app.use('/browse', browse);
-
-app.use(bodyparser.urlencoded({ extended: false }));
+app.use('/register', register);
 
 app.use(function(err, req, res, next) { 
     res.locals.message = err.message;
@@ -60,18 +60,18 @@ app.use(function(err, req, res, next) {
     var User = require('./models/user');
     const bodyParser = require('body-parser');
     
-    var newuser = Database.seql.models.User.create({
-        username: 'sadoifjsoi',
-        password: '123',
-        id: 0
-    }).then(
-        () => {
-            console.log('**New User Success**');
-        },
-        () => {
-            console.error('**New User Failed**');
-        }
-    );
+    // var newuser = Database.seql.models.User.create({
+    //     username: 'sadoifjsoi',
+    //     password: '123',
+    //     id: 0
+    // }).then(
+    //     () => {
+    //         console.log('**New User Success**');
+    //     },
+    //     () => {
+    //         console.error('**New User Failed**');
+    //     }
+    // );
 
 //#endregion
 
