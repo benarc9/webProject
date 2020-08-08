@@ -1,18 +1,14 @@
 var express = require('express');
 var router = express.Router();
-var User = require('../models/user');
-var Database = require('../db');
 
-router.get('/' , function(req , res, next){
+router.get('/' ,function (req, res, next){
+    console.log("In GET HTTP Method");
     res.render('registration');
 });
 
-router.post('/registration', function(req, res, next){
-    var newuser = Database.seql.models.User.build({
-        username: req.body.newusername,
-        password: req.body.password
-    });
-    res.render('landing');
+router.post('/', function (req, res, next) {
+    console.log("Within POST");
+    console.log("UserName: ", req.body.username);
+    next();
 });
-
 module.exports = router;

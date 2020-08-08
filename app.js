@@ -43,6 +43,12 @@ app.use('/landing', landing);
 app.use('/browse', browse);
 
 app.use(bodyparser.urlencoded({ extended:false }));
+app.use(bodyparser.json());
+
+app.use(function(err, req, res, next) {
+    console.error(err.stack);
+    res.render('error', {error: err});
+});
 
 //#region Database Setup
 
