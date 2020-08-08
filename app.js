@@ -26,11 +26,9 @@ var imagepost = require('./routes/imagepost');
 var postimage = require('./routes/postimage');
 var landing = require('./routes/landing');
 var browse = require('./routes/browse');
-var register = require('./routes/register');
 
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -43,7 +41,6 @@ app.use('/imagepost', imagepost);
 app.use('/postimage', postimage);
 app.use('/landing', landing);
 app.use('/browse', browse);
-app.use('/register', register);
 
 app.use(function(err, req, res, next) { 
     res.locals.message = err.message;
@@ -52,6 +49,12 @@ app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error');
  });
+
+ app.use(function (req,res,next){
+	res.status(404).render('error');
+});
+
+ app.use(express.urlencoded({ extended: true }));
 
 //#region Database Setup
 
