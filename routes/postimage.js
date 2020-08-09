@@ -19,7 +19,6 @@ router.get('/', function (req, res, next) {
 
 router.post('/', upload.single('image'), async function (req, res, next) {
     try {
-        console.log('beforeee')
         const { imageheader, imagedescription } = req.body;
         if (req.session.loggedInUser) {
             const image = await PostImage.create({
@@ -27,8 +26,8 @@ router.post('/', upload.single('image'), async function (req, res, next) {
                 description: imagedescription,
                 userID: req.session.loggedInUser.id
             });
-            console.log('Image: ', image)
-            res.render('imagepost', { image: image.dataValues, fileName: req.file.originalname })
+            console.log('Image: ', image);
+            res.render('imagepost', { image: image.dataValues, fileName: req.file.originalname });
         } else {
             res.render('error');
         }
