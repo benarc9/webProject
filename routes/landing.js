@@ -7,4 +7,9 @@ router.get('/' , function(req , res, next){
     });
 });
 
+router.post ('/:fileName', function(req, res, next) {
+    res.render('imagePost', {fileName: req.params.tagId});
+    next();
+});
+
 module.exports = router;
