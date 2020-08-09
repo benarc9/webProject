@@ -1,23 +1,17 @@
 var express = require('express');
 var router = express.Router();
-var User = require('../models/user');
 var Database = require('../db');
-const { request, urlencoded } = require('express');
-var bodyParser = require('body-parser');
-
-var app = express();
-app.use(bodyParser.json());
 
 router.get('/' , function(req , res, next){
     res.render('registration');
 });
 
 router.post('/register', function(req, res, next){
-    var newuser = Database.seql.models.User.build({
+    const newuser = Database.seql.models.User.create({
         username: req.body.newusername,
         password: req.body.confirmpassword
     });
-    
+    req.session.loggedInUser = newuser.dataValues;
     console.log("User: " , req.body.newusername);
     console.log("Pass: " , req.body.confirmpassword);
     res.render('landing');

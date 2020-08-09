@@ -1,10 +1,10 @@
-var {Sequelize} = require('sequelize');
+var { Sequelize } = require('sequelize');
 
 
-class Database{
-    constructor(){}
+class Database {
+    constructor() { }
 
-    async authenticate(){
+    async authenticate() {
         await Database.seql.authenticate().then(
             () => {
                 console.log('**Auth Success**');
