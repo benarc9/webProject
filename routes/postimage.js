@@ -19,7 +19,6 @@ router.get('/', function (req, res, next) {
 
 router.post('/', upload.single('image'), async function (req, res, next) {
     try {
-        console.log('beforeee')
         const { imageheader, imagedescription } = req.body;
         if (req.session.loggedInUser) {
             const image = await PostImage.create({
