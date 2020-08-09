@@ -10,9 +10,6 @@ router.get('/' , function(req , res, next){
         title: 'Browse Posts',
         images: images
     });
-
-
-
 });
 
 router.post('/search', function(req,res){
