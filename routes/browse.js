@@ -8,7 +8,7 @@ router.get('/' , function(req , res, next){
 });
 
 router.post('/search', function(req,res){
-    console.log('Search: ', req.body.search)
+    console.log('Search: ', req.body.search);
 })
 
 module.exports = router;
