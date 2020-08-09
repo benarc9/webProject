@@ -5,7 +5,7 @@ var Database = require('../db');
 
 const User = Database.seql.define('User', {
     id: {
-        type: DataTypes.INTEGER, 
+        type: DataTypes.INTEGER,
         primaryKey: true,
         allowNull: false,
         autoIncrement: true
@@ -20,19 +20,13 @@ const User = Database.seql.define('User', {
 {
     hooks: {
         beforeCreate : (user , options) => {
-            {              
+            {
                 user.password = user.password && user.password != "" ? BC.hashSync(user.password, 10) : "";
             }
-            
+
         }
     }
 } );
-
-// Load hash from the db, which was preivously stored BC.compare(myPlaintextPassword, hash, function(err, res) {
-  // if res == true, password matched
-  // else wrong password
-//});
-//https://medium.com/@manishsundriyal/a-quick-way-for-hashing-passwords-using-bcrypt-with-nodejs-8464f9785b67
 
 (async() => {
     Database.seql.sync().then(
