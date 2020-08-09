@@ -5,7 +5,7 @@ var router = express.Router();
 const storage = multer.diskStorage({
     destination: (req, file, cb) => cb(null, 'public/images'),
     filename: (req, file, cb) => {
-        console.log('heyyy==>>>>', req.body, 'file==>>>', file);
+        console.log('Body: ', req.body, 'File: ', file);
         return cb(null, file.originalname)
     }
 })
@@ -27,13 +27,13 @@ router.post('/', upload.single('image'), async function (req, res, next) {
                 description: imagedescription,
                 userID: req.session.loggedInUser.id
             });
-            console.log('afterr==>>', image)
+            console.log('Image: ', image)
             res.render('imagepost', { image: image.dataValues, fileName: req.file.originalname })
         } else {
             res.render('error');
         }
     } catch (err) {
-        console.log('errrrr==>>>>', err);
+        console.log('Error: ', err);
     }
 });
 
