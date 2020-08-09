@@ -20,6 +20,8 @@
     </div>
 </div>
 
-<nav aria-label="Image Browser">
-
-</nav>
+<ul class="images">
+    {{#each image}}
+        <img src="../public/images/{{image}}" alt="Missing Image" width="72" height="72">
+    {{/each}}
+</ul>
