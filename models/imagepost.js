@@ -4,19 +4,20 @@ var Database = require('../db');
 
 const Image = Database.seql.define('PostImage', {
     userID: {
-        type: DataTypes.INTEGER, 
+        type: DataTypes.INTEGER,
         primaryKey: true,
         allowNull: false,
         autoIncrement: true
     },
     userID: {
-        type: DataTypes.INTEGER, 
+        type: DataTypes.INTEGER,
     },
     description: {
         type: DataTypes.TEXT('small')
     },
     imageName: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        unique: true
     }
 } );
 
